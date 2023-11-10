@@ -57,47 +57,33 @@
     </div>
 
     <script type="text/javascript">
-        //fonction qui va analyser la phrase
+        //fonction qui va délivrer une analyse la phrase dans une alert
         function analyse() {
-
+            //variable qui récupère la phrase et transforme les caractères en valeurs
             let phrase = document.getElementById("sentence").value;
+
+            //variable qui compte les caractères de phrase
+            let length = phrase.length;
+            //variable qui récupère le 5eme caractère
+            const fifthValue = phrase.charAt(4);
+            //variable qui récupère les 3 premiers caractères
+            let threeFirst = phrase.substring(0,3);
+            //variable qui récupère les 3 derniers caractères
+            let lastThree = phrase.substring(phrase.length-3, phrase.length);
             
-            console.log(phrase.length);
+            
+            if (length < 5)
+                alert("Essayez une phrase plus longue");
 
-            if (phrase.length < 5)
-            alert("au secours")
+            else {
+                alert("Nombre de caractères " + length + "\n" +
+                    "Caractère en cinquième position " + fifthValue + "\n" +
+                    "Trois premiers caractères " + threeFirst + "\n" +
+                    "Trois derniers caractères "+ lastThree)
 
-            //création du tableau, et intégration données#sentence
-            //let tableau = ["sentence"]
-
-            //vérifier qu'elle comprend au moins cinq caractères
-            //if ("sentence".length < 5)///corriger, mais je peux appliquer la méthode pour trouver la place d'un caractère dans un tableau à un string
-            //return //tableau avec juste le nombre de caractères
-
-            //else 
-
-            //accéder à un éléments du tableau
-            //let first = tableau[0],
+            }
         }
-            //compter le nombre de caractère
 
-            
-        // CODE HERE !
-        /*
-         * récupérer la phrase
-         * transformer ses données en élément de tableau?
-         * 
-         * 
-         * si non, le tableau devra renvoyer (via console.log
-         * que l'analyse du nombre de caractère de la phrase
-         * 
-         * si oui, 
-         * alert va renvoyer:
-         * le nombre de caractères
-         * le 5eme caractère de la phrase
-         * une chaine de caractères contenant les 3 premiers caractères de la phrase
-         * une chaine de caractères contenant les 3 derniers caractères de la phrase
-    
 
     </script>
 </body>
