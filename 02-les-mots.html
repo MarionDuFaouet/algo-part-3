@@ -62,20 +62,19 @@
             //variable qui récupère le phrase
             let sentence = document.getElementById("sentence").value;
             //variable qui récupère le deuxième caractère
-            let char = sentence.charAt(1);
+            let i = sentence.charAt(0);
             //variable qui récupère le premier caractère
-            let beforeChar = char.charAt(0);
+            let beforeChar = sentence.charAt(-1);
             //variable qui va récupérer le dernier caractère
-            let lastChar = sentence.substring(sentence.length -1, sentence.length);
-            //variable qui 
-            //let words = (sentence.indexOf)
+            let lastChar = i.substring(sentence.length -1, sentence.length);
+            
 
            // boucle qui va incrémenter de 1 à chaque fois qu'elle rencontre un espace
-            for (let words = 0; words < lastChar; words++) {
+            for (let i = 0; i < lastChar; i++) {
 
                 
                 
-                console.log(`Nombre de mots dans la phrase  ${words}`);
+                console.log(`Nombre de mots dans la phrase  ${i}`);
 
             }
 
