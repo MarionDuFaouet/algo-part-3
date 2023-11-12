@@ -73,11 +73,11 @@
             for (let i = 0; i < lastChar; i++) {
 
                 if (i === " ") {
-                    ; //&& ( i !== beforeChar));
+                    //&& ( i !== beforeChar));
                     console.log(`Nombre de mots dans la phrase  ${i}`);
 
                 }
-                else beforeChar = charAt(i) //+1
+                else beforeChar = (charAt(i) + 1)
                 /* 
                  * définitivement ma boucle ne fonctionne pas, 
                  * je ne sais pas comment passer à l'analyse du caractère suivant
