@@ -41,9 +41,21 @@
     </div>
 
     <script type="text/javascript">
+        
+        let notes = [8.75, 14, 13, 5.5, 9, 17, 11.25];
 
-        // Tableau des notes obtenues
-        const notes = [8.75, 14, 13, 5.5, 9, 17, 11.25];
+        function average(notes) {
+            
+            //for (const item of notes) {}
+
+                //fonction qui additionner toutes les notes
+                let sum = notes.reduce((accumulator, currentValue) => accumulator + currentValue);
+
+            let ave = sum / notes.length;
+
+            console.log(ave.toFixed(2));
+        }
+
 
         // Calcule et affiche moyenne des notes
         // function average(noteArray) {
