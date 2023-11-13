@@ -56,33 +56,34 @@
         </button>
     </div>
 
+
     <script type="text/javascript">
+
+
+
         // Cette fonction affichera le nombre de mots de la phrase saisie
         function countWords() {
             //variable qui récupère le phrase
             let sentence = document.getElementById("sentence").value;
-            //variable qui récupère le deuxième caractère
-            let i = sentence.charAt();
-            //variable qui récupère le premier caractère
-            let beforeChar = sentence.charAt(i - 1);
-            //variable qui va récupérer le dernier caractère
-            let lastChar = i.substring(sentence.length - 1, sentence.length);
-
+            let previousChar = " ";
+            let count = 0;
+            let otherChar = previousChar.replaceAll(" !")
+            //   = !?;:.' replace replace all'
 
             // boucle qui va incrémenter de 1 à chaque fois qu'elle rencontre un espace
-            for (let i = 0; i < lastChar; i++) {
+            for (let i = 0; i < sentence.length; i++) {
 
-                if (i === " ") {
-                    //&& ( i !== beforeChar));
-                    console.log(`Nombre de mots dans la phrase  ${i}`);
+                //lire le caractère courant
+                let currentChar = sentence.charAt(i);
+                // si caractère courant !== " " et caractère d'avant === " ", ajouter 1 au compteur
+                if ((currentChar !== " ") && (previousChar === " ")) {count++;}
 
-                }
-                else beforeChar = (charAt(i) + 1)
-                /* 
-                 * définitivement ma boucle ne fonctionne pas, 
-                 * je ne sais pas comment passer à l'analyse du caractère suivant
-                 */
+                // ,"!",",",".",";","'","?"
+
+                //et c'est là que mon caractère précédent devient le courant!!!!!
+                previousChar = currentChar;
             }
+            console.log(`Nombre de mots dans la phrase  ${count++}`);
         }
 
     </script>
