@@ -35,8 +35,8 @@
             <p class="text-success">average (notes) affichera 11.21</p>
         </div>
 
-        <button type="button" class="btn btn-primary" onclick="average()">
-            Calculer la moyenne
+        <button type="button" class="btn btn-primary" onclick="average([8.75, 14, 13, 5.5, 9, 17, 11.25])"></button>
+        Calculer la moyenne
         </button>
     </div>
 
@@ -45,47 +45,46 @@
         //SANS BOUCLE
         // let notes = [8.75, 14, 13, 5.5, 9, 17, 11.25];
 
-        // function average(notes) {
+        // function average(noteArray) {
 
         //     //for (const item of notes) {}
 
-        //         //fonction qui additionner toutes les notes
-        //         let sum = notes.reduce((accumulator, currentValue) => accumulator + currentValue);
+        //     //fonction qui additionner toutes les notes
+        //     let sum = notes.reduce((accumulator, currentValue) => accumulator + currentValue);
 
         //     let ave = sum / notes.length;
 
         //     console.log(ave.toFixed(2));
         // }
 
-        // AVEC BOUCLE FOR
-        function average() {
-            let notes = [8.75, 14, 13, 5.5, 9, 17, 11.25];
-            
-            for (let i = 0; i < notes.length; i ++) {
-                
-                //page blanche 
-            }
 
-            // let moyenne = somme/notes.length;
-            // console.log(moyenne);
+        //AVEC BOUCLE FOR
+        // //const notes = [8.75, 14, 13, 5.5, 9, 17, 11.25];
 
-            
-        }
-
-        // Calcule et affiche moyenne des notes
-        // function average(noteArray) {
-
-        //     for (let  =; = ; ++) {
-
-        //     }
-
-
-        //     console.log(`Moyenne des notes ${}`)
-
-        //     notes.forEach((element) => {
-
-        //     });
+        // function average(noteArray){
+        //     let somme = 0;
+        // //passe en revue les valeurs, en partant de 0, jusqu'à la fin
+        // for (let i = 0; i < noteArray.length; i++) {
+        //     somme += noteArray[i]
         // }
+        // console.log(`la moyenne de ces notes est de ${(somme/noteArray.length).toFixed(2)}`)
+        // //console.log( (somme / noteArray.length).toFixed(2));
+        // }
+
+
+        //BOUCLE forEach()
+        //variable qui va initier mon calcul 
+        let somme = 0
+        /*
+         * fonction qui va passer en revue les données et appliquant 
+         * la fonction average, calculer dans la boucle et afficher le résulstat dans la console
+         */
+        function average(noteArray) {
+            noteArray.forEach(function average(noteArray) {
+                somme += noteArray
+            });
+            console.log((somme / noteArray.length).toFixed(2))
+        }
 
 
     </script>
