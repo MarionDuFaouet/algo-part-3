@@ -71,63 +71,60 @@
 
         <label>Nouvelle note ?</label>
         <input type="text" id="note" placeholder="Nouvelle note (optionnelle)" />
-        <button type="button" class="btn btn-primary" onclick="refreshAverage([8.75, 14, 13, 5.5])">
+        <button type="button" class="btn btn-primary" onclick="refreshAverage()">
             (Re)calculer la moyenne
         </button>
     </div>
 
     <script type="text/javascript">
-        /*
-         * fonction qui va récupérer le contenu de l'input.
-         * En fonction de l'entrée (> || < 20), va ouvrir un message d'erreur
-         * ou va appeler la boucle average()
-         * qui elle-même va appeler display array()
-         */
-        function refreshAverage() {
-            //variable tableau d'origine
-            let notes = [8.75, 14, 13, 5.5];
-            //récupère la nouvelle valeur et change le type en number
-            let newNote = parseInt(document.getElementById("note").value);
-            /* 
-             * si newNote > 20, alert
-             * sinon, ranger valeur dans nouveau tableau? (newAverage?)
-             * et appeler fonction average()
-             */
-            if (newNote > 20) {
-                alert("veuillez entrer une note comprise entre 0 et 20");
-            } else {
-                //obtenir la nouvelle donnée et la ranger dans le tableau
-                notes.push(newNote)
-                //appeler la boucle qui va calculer la nouvelle moyenne 
-                function average(notes) {
-                    //créé un indice de départ
-                    let somme = 0;
-                    /* 
-                     * passe en revue les valeurs du nouveau tableau, 
-                     * en partant de 0, jusqu'à la fin
-                     * et additionne les valeurs une après l'autre
-                     * et appeler displayArray()
-                     */
-                    for (let i = 0; i < notes.length; i++) {
-                        somme += notes[i];
-                    }
-                    console.log(notes)
-                    
-                    // function displayArray(notes) {
-                    //         let out = 'Contenu du tableau :\n\n';
-                    //         //     for (let i in obj) {
-                    //         //         out += "index : " + i + " -> valeur : " + obj[i] + "\n";
-                    //         //     }
 
-                    //         //     alert(out);
-                    //         // }
-                    //     }
-                }
+        // notes de départ
+        let notes = [8.75, 14, 13, 5.5];
+        let somme = 0
+
+        /*
+         * La fonction "avearge" calcule la moyenne des notes contenues dans un tableau 
+         * (s'inspirer de l'exercice #03 - La moyenne pour renseigner cette fonction)
+         * Parametres : tableau qui contient les notes
+         * Retour : la moyenne calculée
+         */
+
+        function average(notes) {
+            for (let i = 0; i < notes.length; i++) {
+                somme += notes[i]
+            }
+            return ((somme / notes.length).toFixed(2))
+        }
+        /*
+         * Fonction appelée lors du 'clic' sur le bouton
+         * Parameters: 
+         * Return:
+         */
+
+        function refreshAverage() {
+            let newNumber = document.getElementById("note").value;
+
+            if (newNumber < 20) {
+                notes.push(newNumber);
+                let newAverage = average.return//appeler average?
+                //ranger le résultat dans une variable
+                displayAverage()
+                console.log(`moyenne ${somme}`)
+            }
+            else {
+                alert("Veuillez entrer une notre comprise entre 0 et 20")
+                return;
+            }
+            
+        }
+
+        function displayArray(notes) {
+            let out = 'Contenu du tableau :\n\n';//???WTF???
+            for (let i in notes) {
+                out += "index : " + i + " -> valeur : " + obj[i] + "\n";
             }
 
-            // (`la moyenne de ces notes est de ${(somme/noteArray.length).toFixed(2)}`)
-            // //console.log( (somme / noteArray.length).toFixed(2));
-            
+            alert(out);
         }
 
     </script>
