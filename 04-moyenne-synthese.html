@@ -84,19 +84,19 @@
          */
         function refreshAverage() {
             //variable tableau d'origine
-            //let notes = [8.75, 14, 13, 5.5];
+            //let notes = [8.75, 14, 13, 5.5]; ???
             //récupère la valeur et change le type en number
             let newNote = parseInt(document.getElementById("note").value);
             /* 
              * si newNote > 20, alert
-             * sinon, ranger valeur dans nouveau tableau? (newAverage)
+             * sinon, ranger valeur dans nouveau tableau? (newAverage?)
              * et appeler fonction average()
              */
             if (newNote > 20) {
                 alert("veuillez entrer une note comprise entre 0 et 20");
             } else {
                 //obtenir la nouvelle donnée et la ranger dans le tableau
-                refreshAverage.push(newNote)
+                [refreshAverage].push(newNote)
                 //appeler la boucle qui va calculer la nouvelle moyenne 
                 function average(refreshAverage) {
                     //créé un indice de départ
@@ -109,8 +109,8 @@
                      */
                     for (let i = 0; i < refreshAverage.length; i++) {
                         somme += refreshAverage[i];
-
-                        function displayArray(refreshArray) {
+                    }
+                    function displayArray(refreshArray) {
                             let out = 'Contenu du tableau :\n\n';
                             //     for (let i in obj) {
                             //         out += "index : " + i + " -> valeur : " + obj[i] + "\n";
@@ -119,7 +119,6 @@
                             //     alert(out);
                             // }
                         }
-                    }
                 }
             }
 
