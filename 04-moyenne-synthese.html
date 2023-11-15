@@ -88,7 +88,6 @@
          * Parametres : tableau qui contient les notes
          * Retour : la moyenne calculée
          */
-
         function average(notes) {
 
             for (let i = 0; i < notes.length; i++) {
@@ -106,12 +105,13 @@
          */
 
         function refreshAverage() {
-            let newNumber = document.getElementById("note").value;
-            // parseFloat.newNumber
+            let newNumber = document.getElementById("note").value;//le soucis est là, mon newNumber est string
+            //newNumber = Number.newNumber?
+            //parseInt? parseFloat?
 
             if (newNumber >= 0 && newNumber <= 20) {
                 // ajoute newNumber à notes
-                notes.push(newNumber);
+                notes.push(newNumber).value;
             }
             else {
                 alert("Veuillez entrer une note comprise entre 1 et 20");
