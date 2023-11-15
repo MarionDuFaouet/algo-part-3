@@ -80,41 +80,45 @@
 
         // notes de départ
         let notes = [8.75, 14, 13, 5.5];
+        // variable index boucle 
         let somme = 0
 
         /*
-         * La fonction "average" calcule la moyenne des notes contenues dans un tableau 
-         * (s'inspirer de l'exercice #03 - La moyenne pour renseigner cette fonction)
+         * fonction qui va calculer la moyenne des notes
          * Parametres : tableau qui contient les notes
          * Retour : la moyenne calculée
          */
 
         function average(notes) {
+
             for (let i = 0; i < notes.length; i++) {
                 somme += notes[i]
             }
-            return ((somme / notes.length).toFixed(2))
+            return ((somme / notes.length).toFixed(2));
         }
 
         /*
-         * Fonction appelée lors du 'clic' sur le bouton
-         * 
+         * refreshAverage appelée par le onclick
+         * récupère #, transformé en variable newNumber
+         * arrondi  à deux décimales
+         * if vérifie si newNumber est >= à 0 et <= à 20, ajoute newNumber à notes
+         * else envoi alert
          */
 
         function refreshAverage() {
             let newNumber = document.getElementById("note").value;
-            newNumber = parseFloat.newNumber
+            // parseFloat.newNumber
 
-            if (newNumber < 20) {
+            if (newNumber >= 0 && newNumber <= 20) {
                 notes.push(newNumber);
             }
             else {
-                alert("Veuillez entrer une note comprise entre 0 et 20");
-                return;
+                alert("Veuillez entrer une note comprise entre 1 et 20");
             }
-
-            displayAverage(notes);
-            console.log(`moyenne ${somme}`);
+            //appel la fonction displayArray qui récupère notes
+            displayArray(notes);
+            //affiche la moyenne 
+            console.log((somme / notes.length).toFixed(2));
         }
 
 
