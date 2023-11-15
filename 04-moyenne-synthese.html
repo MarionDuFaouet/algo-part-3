@@ -81,7 +81,7 @@
         // notes de départ
         let notes = [8.75, 14, 13, 5.5];
         // variable index boucle 
-        let somme = 0
+        let somme = 0;
 
         /*
          * fonction qui va calculer la moyenne des notes
@@ -110,6 +110,7 @@
             // parseFloat.newNumber
 
             if (newNumber >= 0 && newNumber <= 20) {
+                // ajoute newNumber à notes
                 notes.push(newNumber);
             }
             else {
@@ -118,7 +119,7 @@
             //appel la fonction displayArray qui récupère notes
             displayArray(notes);
             //affiche la moyenne 
-            console.log((somme / notes.length).toFixed(2));
+            console.log(`${average(notes)}`);
         }
 
 
