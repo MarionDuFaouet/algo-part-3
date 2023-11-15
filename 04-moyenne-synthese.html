@@ -79,13 +79,14 @@
     <script type="text/javascript">
         /*
          * fonction qui va récupérer le contenu de l'input.
-         * En fonction de l'entrée (> || < 20), va appeler la boucle average()
+         * En fonction de l'entrée (> || < 20), va ouvrir un message d'erreur
+         * ou va appeler la boucle average()
          * qui elle-même va appeler display array()
          */
         function refreshAverage() {
             //variable tableau d'origine
-            //let notes = [8.75, 14, 13, 5.5]; ???
-            //récupère la valeur et change le type en number
+            let notes = [8.75, 14, 13, 5.5];
+            //récupère la nouvelle valeur et change le type en number
             let newNote = parseInt(document.getElementById("note").value);
             /* 
              * si newNote > 20, alert
@@ -96,9 +97,9 @@
                 alert("veuillez entrer une note comprise entre 0 et 20");
             } else {
                 //obtenir la nouvelle donnée et la ranger dans le tableau
-                [refreshAverage].push(newNote)
+                notes.push(newNote)
                 //appeler la boucle qui va calculer la nouvelle moyenne 
-                function average(refreshAverage) {
+                function average(notes) {
                     //créé un indice de départ
                     let somme = 0;
                     /* 
@@ -107,18 +108,20 @@
                      * et additionne les valeurs une après l'autre
                      * et appeler displayArray()
                      */
-                    for (let i = 0; i < refreshAverage.length; i++) {
-                        somme += refreshAverage[i];
+                    for (let i = 0; i < notes.length; i++) {
+                        somme += notes[i];
                     }
-                    function displayArray(refreshArray) {
-                            let out = 'Contenu du tableau :\n\n';
-                            //     for (let i in obj) {
-                            //         out += "index : " + i + " -> valeur : " + obj[i] + "\n";
-                            //     }
+                    console.log(notes)
+                    
+                    // function displayArray(notes) {
+                    //         let out = 'Contenu du tableau :\n\n';
+                    //         //     for (let i in obj) {
+                    //         //         out += "index : " + i + " -> valeur : " + obj[i] + "\n";
+                    //         //     }
 
-                            //     alert(out);
-                            // }
-                        }
+                    //         //     alert(out);
+                    //         // }
+                    //     }
                 }
             }
 
