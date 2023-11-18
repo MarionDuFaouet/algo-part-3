@@ -39,16 +39,16 @@
 
 
     <script type="text/javascript">
-       
+
         // va récupérer le chiffre, le multiplier par lui même et afficher le carré du nombre entré
         function square() {
-            let N = document.getElementById("number").value
-    
-            //boucle qui passe d'un numéro à l'autre après l'avoir multiplié par lui-même
-            for (let i = 0; i < N+1; i++) {
+            let N = parseInt(document.getElementById("number").value);
+            
 
+            //boucle qui calcul le carré des nombres premiers jusqu'au nombre entré
+            for (let i = 1; i < N+1; i++) {
 
-                console.log(`${i*i} est le carré de ${i}`)
+                console.log(`${i * i} est le carré de ${i}`)
             }
         }
 
