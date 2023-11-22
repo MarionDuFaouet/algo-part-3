@@ -59,34 +59,27 @@
 
     <script type="text/javascript">
 
-
-
-        // Cette fonction affichera le nombre de mots de la phrase saisie
+        /* see the course or the statement to get information about this function */
         function countWords() {
-            //variable qui récupère le phrase
-            let sentence = document.getElementById("sentence").value;
-            let previousChar = " ";
+            let inputText = document.getElementById("sentence").value;
+            let inputLength = inputText.length;
+            let previousChar = ' ';     // previous character storage
+            // at starting point, it simulates space character at position -1
             let count = 0;
-            let otherChar = previousChar.replaceAll(" !")
-            //   = !?;:.' replace replace all'
 
-            // boucle qui va incrémenter de 1 à chaque fois qu'elle rencontre un espace
-            for (let i = 0; i < sentence.length; i++) {
+            inputText = inputText.replace(/[;:?!,']/g, " "); // suggested insertion to reach the "super banco"
 
-                //lire le caractère courant
-                let currentChar = sentence.charAt(i);
-                // si caractère courant !== " " et caractère d'avant === " ", ajouter 1 au compteur
-                if ((currentChar !== " ") && (previousChar === " ")) {count++;}
-
-                // ,"!",",",".",";","'","?"
-
-                //et c'est là que mon caractère précédent devient le courant!!!!!
-                previousChar = currentChar;
+            for (let i = 0; i<inputLength; i++){
+                let currentChar = inputText.charAt(i);
+            if ((currentChar !== previousChar) && (previousChar === ' ')) count++;
+            previousChar = currentChar;// the currect char becomes the previous char for the next iteration
             }
-            console.log(`Nombre de mots dans la phrase  ${count++}`);
-        }
+        
+        console.log(`Nombre de mots : ${count}`);
+    }
 
     </script>
+    
 </body>
 
 </html>

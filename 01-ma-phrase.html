@@ -60,28 +60,24 @@
         //fonction qui va délivrer une analyse la phrase dans une alert
         function analyse() {
             //variable qui récupère la phrase et transforme les caractères en valeurs
-            let phrase = document.getElementById("sentence").value;
-
+            let sentence = document.getElementById("sentence").value;
             //variable qui compte les caractères de phrase
-            let length = phrase.length;
+            let length = sentence.length;
             //variable qui récupère le 5eme caractère
-            const fifthValue = phrase.charAt(4);
+            let fiveChar = sentence.charAt(4);
             //variable qui récupère les 3 premiers caractères
-            let threeFirst = phrase.substring(0,3);
+            let threeFirst = sentence.substring(0,3);
             //variable qui récupère les 3 derniers caractères
-            let lastThree = phrase.substring(phrase.length-3, phrase.length);
-            
-            
-            if (length < 5)
-                alert("Essayez une phrase plus longue");
+            let threeLast = sentence.substring(length-3, length);
 
-            else {
-                alert("Nombre de caractères " + length + "\n" +
-                    "Caractère en cinquième position " + fifthValue + "\n" +
-                    "Trois premiers caractères " + threeFirst + "\n" +
-                    "Trois derniers caractères "+ lastThree)
-
-            }
+            if (length < 5) {
+                alert("Essayer une phrase plus longue")
+            } else {
+                alert("Nombre de caractères dans la phrase " + length + "\n" +
+                    "Cinquième caratère de la phrase " + fiveChar + "\n" +
+                    "Trois premiers caractères de la phrase " + threeFirst + "\n" +
+                    "Trois derniers caractères de la phrase " + threeLast);
+                }
         }
 
 

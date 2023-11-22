@@ -80,61 +80,46 @@
 
         // notes de départ
         let notes = [8.75, 14, 13, 5.5];
-
-
+    
         /*
-         * fonction qui va calculer la moyenne des notes
+         * La fonction "avearge" calcule la moyenne des notes contenues dans un tableau 
+         * (s'inspirer de l'exercice #03 - La moyenne pour renseigner cette fonction)
          * Parametres : tableau qui contient les notes
          * Retour : la moyenne calculée
          */
-        function average(tab) {
-            // variable index boucle 
-            let somme = 0;
-            for (let i = 0; i < tab.length; i++) {
-                somme += tab[i]
-            }
-            let moyenne = (somme / tab.length).toFixed(2);
-            return (moyenne);
+    
+        function average(notes) {
+            let sum =0;
+            for (let i =0; i<notes.length; i++);
+            sum += notes[i];
+            return((sum/notes.length).toFixed(2));
         }
-
+        
         /*
-         * refreshAverage appelée par le onclick
-         * récupère #, transformé en variable newNumber
-         * arrondi  à deux décimales
-         * if vérifie si newNumber est >= à 0 et <= à 20, ajoute newNumber à notes
-         * else envoi alert
+         * Fonction appelée lors du 'clic' sur le bouton
+         * Parameters: 
+         * Return:
          */
-
+    
         function refreshAverage() {
             let newNote = document.getElementById("note").value;
 
-            if (newNote !== " ") {
-                let newNoteFloat = parseFLoat(newNote);
-                // if (isNaN)(newNoteFloat) {
-                //     alert(artung);
-                // }
-                notes.push(newNoteFloat);
-                }
-                else {
-                    if (!newNoteFloat >= 0 && newNoteFloat <= 20) {
-                        alert("Veuillez entrer une note comprise entre 1 et 20");
-                        return;
-                    }
-                }
-            
-                // ajoute newNumber à notes
-                // if (newNote !== " ") 
-                let myMoyenne = average(notes);
-            
-
-            //appel la fonction displayArray qui récupère notes
+            if (isNaN(newNote)) {
+                alert('Veuillez saisir un nombre.');
+                return;
+            } else if ((newNote < 0) || (newNote > 20)){
+                alert('Veuillez saisir un nombre entre 0 et 20');
+                return;
+            }
+            else{
+                notes.push(newNote);
+            }
+            let moyenne = average(notes);
             displayArray(notes);
-            //affiche la moyenne 
-            console.log(`Votre moyenne ${myMoyenne}`);
             return;
+    
         }
-
-
+    
     </script>
 </body>
 
